@@ -2,11 +2,10 @@
 function solveEquation(a, b, c) {
   let arr = [];
   let D = b**2 - 4 * a * c;
-  if (D < 0) return arr;
 
   if (D === 0) {
     arr = [-b / (2 * a)];
-  } else {
+  } else if (D > 0) {
     let x1 = (-b + Math.sqrt(D)) / (2 * a);
     let x2 = (-b - Math.sqrt(D)) / (2 * a);
     arr = [x1, x2];
@@ -15,7 +14,7 @@ function solveEquation(a, b, c) {
   return arr;
 }
 
-solveEquation(1, 2, 1);
+solveEquation(1, 2, 10);
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const monthlyInterest = percent / 100 / 12;
@@ -23,7 +22,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const monthlyPayment = creditAmount * (monthlyInterest + (monthlyInterest / ((1 + monthlyInterest) ** countMonths - 1)));
   const totalPayment = monthlyPayment * countMonths;
 
-  return totalPayment.toFixed(2);
+  return Number(totalPayment.toFixed(2));
 }
 
 calculateTotalMortgage(10,20000,20000,48);
