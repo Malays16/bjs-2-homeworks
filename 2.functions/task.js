@@ -53,18 +53,21 @@ function differenceEvenOddWorker(...arr) {
 function averageEvenElementsWorker(...arr) {
   let sumEvenElement = 0;
   let countEvenElement = 0;
+
+  if (arr.length === 0) {
+    return 0;
+  }
+
   arr.forEach((num) => {
     if (num % 2 === 0) {
       sumEvenElement += num;
-      countEvenElement ++;
+      countEvenElement++;
     }
-    if (countEvenElement === 0) {
-    return 0;
-  }
-  }
-    )
-    return sumEvenElement / countEvenElement;
+  });
+
+  return sumEvenElement / countEvenElement;
 }
+
 
 function makeWork (arrOfArr, func) {
   let maxWorkerResult = -Infinity;
