@@ -15,7 +15,7 @@ Student.prototype.addMarks = function(...marksToAdd) {
   }
   this.marks.push(...marksToAdd);
 }
-}
+
 
 Student.prototype.getAverage = function () {
    if (!this.marks || this.marks.length === 0) {
