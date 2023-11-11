@@ -23,8 +23,8 @@ class PrintEditionItem {
 }
 
 class Magazine extends PrintEditionItem {
-  constructor() {
-    super();
+  constructor(name, releaseDate, pagesCount) {
+    super(name, releaseDate, pagesCount);
     this.type = 'magazine';
   }
 }
@@ -42,25 +42,28 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-  constructor(author) {
-    super(author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount);
     this.type = 'novel';
   }
 }
 
 class FantasticBook extends Book {
-  constructor(author) {
-    super(author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCount);
     this.type = 'fantastic';
   }
 }
 
 class DetectiveBook extends Book {
-  constructor(author) {
-    super(author);
+  constructor(author, name, releaseDate, pagesCount) {
+    super(author, name, releaseDate, pagesCountr);
     this.type = 'detective';
   }
 }
+
+const myFantasticBook = new FantasticBook("Джордж Оруэлл", "1984", 1949, 328);
+console.log(myFantasticBook);
 
 class Library {
   constructor(name) {
